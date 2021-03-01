@@ -1,43 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+//import logo from './logo.svg';
 // import './App.css';
+import Header from './components/Header';
+import Banner from './components/Banner';
+import Footer from './components/Footer';
+import { Route, Link, Switch } from 'react-router-dom'
+
+
 import './assets/css/main.css';
 import './images/banner.jpg'
 
 function App() {
   return (
     <div className="page-wrapper">
-      <header id="header" class="alt">
-        <h1><a href="index.html">School In The Cloud</a></h1>
-        <nav id="nav">
-          <ul>
-            <li class="special">
-              <a href="#menu" class="menuToggle"><span>Menu</span></a>
-              <div id="menu">
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="generic.html">About Us</a></li>
-                  <li><a href="elements.html">Meet The Team</a></li>
-                  <li><a href="#">Sign Up</a></li>
-                  <li><a href="#">Log In</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      {/* Header */}
+      {/* notes go here */}
+      <Header />
       {/* Banner */}
-      <section id="banner">
-        <div class="inner">
-          <h2>School In The Cloud</h2>
-          <p>
-            School in the Cloud is a platform that trains senior volunteers to teach students in a group or individual setting.
-          </p>
-          <ul class="actions special">
-            <li><a href="#" class="button primary">Explore</a></li>
-          </ul>
-        </div>
-        <a href="#one" class="more scrolly">Learn More</a>
-      </section>
+      {/* 
+        notes go here 
+      */}
+      <Banner />
       {/* One */}
       <section id="one" class="wrapper style1 special">
         <div class="inner">
@@ -190,7 +173,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer id="footer">
+      {/* <footer id="footer">
         <ul class="icons">
           <li>
             <a href="#" class="icon brands fa-twitter"
@@ -222,7 +205,8 @@ function App() {
           <li>&copy; Buddy Agyin 2020</li>
           <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 }
