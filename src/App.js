@@ -1,4 +1,5 @@
 import "./App.css";
+import styled from "styled-components"
 
 function App() {
   return (
@@ -71,7 +72,7 @@ function App() {
         </div>
       </section>
       <section id="two">
-        <section className="spotlight">
+        <Spotlight>
           <div className="img">
             <img src="https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80" alt="" />
           </div>
@@ -82,10 +83,10 @@ function App() {
               imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
             </p>
           </div>
-        </section>
-        <section className="spotlight">
+        </Spotlight>
+        <Spotlight>
           <div className="img">
-            <img src="./images.pic02" alt="" />
+            <img src="https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2113&q=80" alt="" />
           </div>
           <div className="content">
             <h2> TORTOR DOLORE FEUGIAT ELEMENTUM MAGNA </h2>
@@ -95,10 +96,10 @@ function App() {
               imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.
             </p>
           </div>
-        </section>
-        <section className="spotlight">
+        </Spotlight>
+        <Spotlight>
           <div className="img">
-            <img src="./images/pic03" alt="" />
+            <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
           </div>
           <div className="content">
             <h2> AUGUE ELEIFEND ALIQUET SED CONDIMENTUM </h2>
@@ -108,7 +109,7 @@ function App() {
               imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.{" "}
             </p>
           </div>
-        </section>
+        </Spotlight>
       </section>
       <section id="three">
         <div className="inner">
@@ -229,5 +230,9 @@ function App() {
     </div>
   );
 }
+
+const Spotlight = styled.div`
+width: auto;
+` 
 
 export default App;
