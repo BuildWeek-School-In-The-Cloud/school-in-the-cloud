@@ -1,15 +1,13 @@
-import React from 'react';
-//import logo from './logo.svg';
-// import './App.css';
+import React, { useState } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
+
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import SignUp from './components/SignUp';
-import { Route, Link, Switch } from 'react-router-dom'
-
-
 import './assets/css/main.css';
-import './images/banner.jpg'
+import './images/banner.jpg';
+
 
 const initialFormValues = {
   email: '',
@@ -18,6 +16,8 @@ const initialFormValues = {
 }
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({});
+  
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const updateForm = (inputName, inputValue) => {
@@ -39,12 +39,10 @@ function App() {
       return;
     }
     // TODO: axios call to backend
-
-    // reset values if successful
+    // TODO: set current user upon axios post success
+    // TODO: reset values if successful
     setFormValues(initialFormValues);
   }
-
-
 
   return (
     <div className="page-wrapper">
@@ -213,9 +211,13 @@ function App() {
           <Footer />
         </Route>
         <Route path='/signup'>
+        <Header />
+
           {/* Signup */}
           <SignUp 
             values={formValues}
+            update={updateForm}
+            submit={submitForm}
           />
         </Route>
         <Route path='/login'>
