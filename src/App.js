@@ -4,13 +4,48 @@ import React from 'react';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
+import SignUp from './components/SignUp';
 import { Route, Link, Switch } from 'react-router-dom'
 
 
 import './assets/css/main.css';
 import './images/banner.jpg'
 
+const initialFormValues = {
+  email: '',
+  password: '',
+  role: '',
+}
+
 function App() {
+  const [formValues, setFormValues] = useState(initialFormValues);
+
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({
+      ...formValues,
+      [inputName]: inputValue
+    })
+  };
+
+  const submitForm = () => {
+    // create new user to submit
+    const newUser = {
+      email: formValues.email.trim(),
+      password: formValues.password.trim(),
+      role: formValues.role, 
+    }
+    // null checks
+    if (newUser.email === '' || newUser.password === '' || newUser.role === ''){
+      return;
+    }
+    // TODO: axios call to backend
+
+    // reset values if successful
+    setFormValues(initialFormValues);
+  }
+
+
+
   return (
     <div className="page-wrapper">
       <Switch>
@@ -179,6 +214,9 @@ function App() {
         </Route>
         <Route path='/signup'>
           {/* Signup */}
+          <SignUp 
+            values={formValues}
+          />
         </Route>
         <Route path='/login'>
           {/* Login */}
