@@ -43,13 +43,13 @@ function App() {
     }
     // TODO: axios call to backend
     // TODO: set current user upon axios post success
-    // TODO: reset values if successful
 
     // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
     console.log(newUser);
     setCurrentUser(newUser);
     history.push('/student');
     // TODO: rethinking this
+    // TODO: reset values if successful
     setFormValues(initialFormValues);
   }
 
