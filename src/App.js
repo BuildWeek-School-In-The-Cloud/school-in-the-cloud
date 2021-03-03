@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Route, Link, Switch, NavLink } from 'react-router-dom';
+import { Route, Link, Switch, NavLink, useHistory } from 'react-router-dom';
 
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import SignUp from './components/SignUp';
+import StudentLanding from './components/StudentLanding';
 import './assets/css/main.css';
 import './images/banner.jpg';
 
@@ -16,6 +17,8 @@ const initialFormValues = {
 }
 
 function App() {
+  const history = useHistory();
+  
   const [currentUser, setCurrentUser] = useState({});
   
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -43,7 +46,10 @@ function App() {
     // TODO: reset values if successful
 
     // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
-    console.log(newUser)
+    console.log(newUser);
+    setCurrentUser(newUser);
+    history.push('/student');
+    // TODO: rethinking this
     setFormValues(initialFormValues);
   }
 
@@ -216,7 +222,7 @@ function App() {
           <Footer />
         </Route>
         <Route path='/signup'>
-        <Header />
+          <Header />
 
           {/* Signup */}
           <SignUp 
@@ -227,6 +233,12 @@ function App() {
         </Route>
         <Route path='/login'>
           {/* Login */}
+        </Route>
+        <Route path='/student'>
+          {/* Student Landing */}
+          <StudentLanding 
+            currentUser={currentUser}
+          />
         </Route>
       </Switch>
       
