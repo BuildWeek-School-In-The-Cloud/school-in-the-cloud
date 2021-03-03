@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, NavLink } from 'react-router-dom';
 
 import Header from './components/Header';
 import Banner from './components/Banner';
@@ -41,6 +41,9 @@ function App() {
     // TODO: axios call to backend
     // TODO: set current user upon axios post success
     // TODO: reset values if successful
+
+    // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
+    console.log(newUser)
     setFormValues(initialFormValues);
   }
 
@@ -201,8 +204,10 @@ function App() {
                 </p>
               </header>
               <ul class="actions stacked">
-                <li><a href="#" class="button fit primary">Explore</a></li>
-                <li><a href="#" class="button fit">Learn More</a></li>
+                {/* <li><a href="#" class="button fit primary">Explore</a></li> */}
+                <li><NavLink to="#" activeClassName="button fit primary">Explore</NavLink></li>
+                {/* <li><a href="#" class="button fit">Learn More</a></li> */}
+                <li><NavLink to="#" activeClassName="button fit">Learn More</NavLink></li>
               </ul>
             </div>
           </section>

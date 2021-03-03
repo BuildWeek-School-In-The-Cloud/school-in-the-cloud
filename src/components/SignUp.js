@@ -15,7 +15,7 @@ export default function SignUp(props) {
   }
 
   return (
-    <form className='form container'>
+    <form className='form container' onSubmit={onSubmit}>
       <div className='form-group inputs'>
         <label>Email
           <input
