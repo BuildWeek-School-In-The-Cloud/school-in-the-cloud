@@ -1,12 +1,17 @@
 import "./App.css";
-import styled from "styled-components"
+import styled from "styled-components";
 
 function App() {
   return (
     <div className="App-container">
-      <header id="header">
-        <h1>School In The Cloud</h1>
-        <nav id="nav">
+      <head>
+        <title> School In The Cloud</title>
+      </head>
+      <Header>
+        <H1>
+          <a href="/"> School In The Cloud </a>
+        </H1>
+        <Nav>
           <ul>
             <li>
               <a href="#menu" className="menuToggle">
@@ -14,9 +19,9 @@ function App() {
               </a>
             </li>
           </ul>
-        </nav>
-      </header>
-      <section id="banner">
+        </Nav>
+      </Header>
+      <Banner>
         <div className="inner">
           <h2> SCHOOL IN THE CLOUD </h2>
           <p>
@@ -36,7 +41,7 @@ function App() {
         <a href="#one" className="scrolly">
           "LEARN MORE"
         </a>
-      </section>
+      </Banner>
       <section id="one">
         <div className="inner">
           <header className="major">
@@ -74,7 +79,10 @@ function App() {
       <section id="two">
         <Spotlight>
           <div className="img">
-            <img src="https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80" alt="" />
+            <img
+              src="https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1355&q=80"
+              alt=""
+            />
           </div>
           <div className="content">
             <h2>MAGNA PRIMIS LOBORTIS SED ULLAMCORPER</h2>
@@ -86,7 +94,10 @@ function App() {
         </Spotlight>
         <Spotlight>
           <div className="img">
-            <img src="https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2113&q=80" alt="" />
+            <img
+              src="https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2113&q=80"
+              alt=""
+            />
           </div>
           <div className="content">
             <h2> TORTOR DOLORE FEUGIAT ELEMENTUM MAGNA </h2>
@@ -99,7 +110,10 @@ function App() {
         </Spotlight>
         <Spotlight>
           <div className="img">
-            <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="" />
+            <img
+              src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt=""
+            />
           </div>
           <div className="content">
             <h2> AUGUE ELEIFEND ALIQUET SED CONDIMENTUM </h2>
@@ -231,8 +245,53 @@ function App() {
   );
 }
 
+const Header = styled.header`
+  height: 3em;
+  line-height: 3em;
+  width: 100%;
+  left: 10;
+  top: 0;
+  z-index: 10000;
+  position: fixed;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: background-color 0.2s ease;
+  background: #2e3842;
+`;
+
+const H1 = styled.h1`
+  transition: opacity 0.2s ease;
+  height: inherit;
+  left: 1.25em;
+  line-height: inherit;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.225em;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  display: block;
+`;
+const Nav = styled.nav`
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+const Banner = styled.div`
+display: flex;
+flex-direction: column;
+justify-content:center;
+`;
+
 const Spotlight = styled.div`
-width: auto;
-` 
+  width: auto;
+  display: flex;
+  align-items: center;
+  /* background-color: ; */
+`;
 
 export default App;
