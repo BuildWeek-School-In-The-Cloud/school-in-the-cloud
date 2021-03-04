@@ -17,11 +17,11 @@ export default function SignUp(props) {
   return (
     <form className='form container' onSubmit={onSubmit}>
       <div className='form-group inputs'>
-        <label>Email
+        <label>Username
           <input
-            name='email'
+            name='username'
             type='email'
-            value={values.email}
+            value={values.username}
             onChange={onChange}
             placeholder='Type username here...'
           ></input>
@@ -42,8 +42,9 @@ export default function SignUp(props) {
             onChange={onChange}
           >
             <option value=''>--- select role ---</option>
-            <option value='Volunteer'>Volunteer</option>
-            <option value='Student'>Student</option>
+            <option value='admin'>Administrator</option>
+            <option value='volunteer'>Volunteer</option>
+            <option value='student'>Student</option>
           </select>
         </label>
         <div className='submit'>
