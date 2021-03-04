@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Link, Switch, NavLink, useHistory } from 'react-router-dom';
-
+import axios from 'axios';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
@@ -11,7 +11,7 @@ import './images/banner.jpg';
 
 
 const initialFormValues = {
-  email: '',
+  username: '',
   password: '',
   role: '',
 }
@@ -33,7 +33,7 @@ function App() {
   const submitForm = () => {
     // create new user to submit
     const newUser = {
-      email: formValues.email.trim(),
+      username: formValues.email.trim(),
       password: formValues.password.trim(),
       role: formValues.role, 
     }
