@@ -102,7 +102,7 @@ function App() {
           {/* Two */}
           <section id="two" class="wrapper alt style2">
             <section class="spotlight">
-              <div class="image"><img src="images/pic01.jpg" alt="" /></div>
+              <div class="image"><img src="https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="" /></div>
               <div class="content">
                 <h2>
                   Magna primis lobortis<br />
@@ -115,7 +115,7 @@ function App() {
               </div>
             </section>
             <section class="spotlight">
-              <div class="image"><img src="images/pic02.jpg" alt="" /></div>
+              <div class="image"><img src="https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max" alt="" /></div>
               <div class="content">
                 <h2>
                   Tortor dolore feugiat<br />
@@ -128,7 +128,7 @@ function App() {
               </div>
             </section>
             <section class="spotlight">
-              <div class="image"><img src="images/pic03.jpg" alt="" /></div>
+              <div class="image"><img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080" alt="" /></div>
               <div class="content">
                 <h2>
                   Augue eleifend aliquet<br />
