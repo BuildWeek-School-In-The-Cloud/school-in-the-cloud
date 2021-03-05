@@ -13,8 +13,8 @@ export default function SignUp(props) {
 
   const onSubmit = evt => {
     evt.preventDefault();
-    history.push('/login')
     submit();
+    history.push('/login')
   }
 
   return (

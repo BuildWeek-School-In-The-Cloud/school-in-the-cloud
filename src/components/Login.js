@@ -9,13 +9,14 @@ export default function Login(props) {
     update(name, value);
   }
 
-  useEffect(() => {
-    login();
-  }, []);
+//   useEffect(() => {
+//     login();
+//   }, []);
 
   return (
     <form className='form container' onSubmit={login}>
-      Login test
+      <br></br>
+      <h1> Login Test </h1>
       <div className='form-group inputs'>
         <label>Username
           <input

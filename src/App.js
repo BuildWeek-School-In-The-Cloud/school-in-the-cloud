@@ -49,19 +49,21 @@ function App() {
       return;
     }
     // TODO: axios call to backend
+    // REGISTER
     axios.post(
         `https://bw-backend-clouds.herokuapp.com/api/auth/register`, 
         newUser
       ).then((res) => {
-        console.log(res);
+        console.log("res",res);
+        setFormValues(newUser)
+        // setCurrentUser(newUser);
       }).catch((err) => {
         console.log(err);
       })
     // TODO: set current user upon axios post success
 
     // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
-    console.log(newUser);
-    setCurrentUser(newUser);
+    console.log("newUser", newUser);
     // history.push("/student");
     // TODO: rethinking this
     // TODO: reset values if successful
@@ -73,9 +75,9 @@ function App() {
     axios.get(`https://bw-backend-clouds.herokuapp.com/api/student/volunteers`)
       .then((res) => {
 
-        console.log(res);
+        console.log("Volunteer Res", res);
       }).catch((err) => {
-        console.log(err);
+        console.log("Volunteer error", err);
       })
   }
 
@@ -86,13 +88,15 @@ function App() {
       username: formValues.username.trim(),
       password: formValues.password.trim(),
     }
-    axios.post(
-      `https://bw-backend-clouds.herokuapp.com/api/auth/login`,
-      loginUser
+    axiosWithAuth
+    .post(
+      `https://bw-backend-clouds.herokuapp.com/api/auth/login`, loginUser
     ).then((res) => {
-      console.log(res);
+      localStorage.setItem('token', res.data.token);
+      history.push('/student')
+      console.log("res", res);
     }).catch((err) => {
-      console.log(err);
+      console.log("Login Function Error", err);
     });
   }
 
