@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route,  Switch,  useHistory, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios"
+import axiosWithAuth from "./axiosWithAuth"
 
 import Header from "./components/Header";
 import Banner from "./components/Banner";
@@ -68,7 +69,7 @@ function App() {
   const getVolunteerAvailability = () => {
     // get volunteer information
     axios
-      .get(`https://bw-backend-clouds.herokuapp.com/`)
+      .get(`https://bw-backend-clouds.herokuapp.com/api/student/volunteers`)
       .then((res) => {
 
         console.log(res);
