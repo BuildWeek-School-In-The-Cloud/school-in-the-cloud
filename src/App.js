@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Route,  Switch,  useHistory, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios"
+import axiosWithAuth from "./axiosWithAuth"
 
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import StudentLanding from "./components/StudentLanding";
 import "./assets/css/main.css";
@@ -47,19 +49,22 @@ function App() {
       return;
     }
     // TODO: axios call to backend
+    // REGISTER
     axios.post(
         `https://bw-backend-clouds.herokuapp.com/api/auth/register`, 
         newUser
       ).then((res) => {
-        console.log(res);
+        console.log("res",res);
+        setFormValues(newUser)
+        // setCurrentUser(newUser);
       }).catch((err) => {
         console.log(err);
       })
     // TODO: set current user upon axios post success
 
     // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
-    console.log(newUser);
-    setCurrentUser(newUser);
+    console.log("newUser", newUser);
+    // history.push("/student");
     // TODO: rethinking this
     // TODO: reset values if successful
     setFormValues(initialFormValues);
@@ -67,14 +72,32 @@ function App() {
 
   const getVolunteerAvailability = () => {
     // get volunteer information
-    axios
-      .get(`https://bw-backend-clouds.herokuapp.com/`)
+    axios.get(`https://bw-backend-clouds.herokuapp.com/api/student/volunteers`)
       .then((res) => {
 
-        console.log(res);
+        console.log("Volunteer Res", res);
       }).catch((err) => {
-        console.log(err);
+        console.log("Volunteer error", err);
       })
+  }
+
+  const login = () => {
+    console.log('login from app.js test');
+    // TODO: login logic
+    const loginUser = {
+      username: formValues.username.trim(),
+      password: formValues.password.trim(),
+    }
+    axiosWithAuth
+    .post(
+      `https://bw-backend-clouds.herokuapp.com/api/auth/login`, loginUser
+    ).then((res) => {
+      localStorage.setItem('token', res.data.token);
+      history.push('/student')
+      console.log("res", res);
+    }).catch((err) => {
+      console.log("Login Function Error", err);
+    });
   }
 
   return (
@@ -261,7 +284,14 @@ function App() {
           {/* Signup */}
           <SignUp values={formValues} update={updateForm} submit={submitForm} />
         </Route>
-        <Route path="/login">{/* Login */}</Route>
+        <Route path="/login">
+          {/* Login */}
+          <Login
+            values={formValues}
+            update={updateForm}
+            login={login}
+          />
+        </Route>
         <Route path="/student">
           {/* Student Landing */}
           <StudentLanding 

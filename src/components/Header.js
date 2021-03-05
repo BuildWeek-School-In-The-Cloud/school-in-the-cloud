@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import styled from "styled-components";
 
 import "../assets/css/main.css";
@@ -21,9 +21,6 @@ export default function Header() {
                 <ul>
                   <li>
                     <NavLink to="/">Home</NavLink>
-                  </li>
-                  <li>
-                  <NavLink to="/">Meet the Team</NavLink>
                   </li>
                   <li>
                     <NavLink to="/signup">Sign Up</NavLink>
