@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 export default function SignUp(props) {
   const { values, update, submit } = props;
 
+  const history = useHistory()
+
   const onChange = evt => {
     const {name, value} = evt.target;
     update(name, value);
@@ -11,6 +13,7 @@ export default function SignUp(props) {
 
   const onSubmit = evt => {
     evt.preventDefault();
+    history.push('/login')
     submit();
   }
 

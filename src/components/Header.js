@@ -29,7 +29,7 @@ export default function Header() {
                     <NavLink to="/signup">Sign Up</NavLink>
                   </li>
                   <li>
-                  <NavLink to="/StudentLanding">Log In</NavLink>
+                  <NavLink to="/login">Log In</NavLink>
                   </li>
                 </ul>
               {/* </div>

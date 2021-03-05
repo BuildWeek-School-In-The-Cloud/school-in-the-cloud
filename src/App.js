@@ -70,6 +70,7 @@ function App() {
     // get volunteer information
     axios.get(`https://bw-backend-clouds.herokuapp.com/api/student/volunteers`)
       .then((res) => {
+
         console.log(res);
       }).catch((err) => {
         console.log(err);
