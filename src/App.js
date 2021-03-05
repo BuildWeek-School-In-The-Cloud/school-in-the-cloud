@@ -1,16 +1,66 @@
-import React from 'react';
-//import logo from './logo.svg';
-// import './App.css';
+import React, { useState } from 'react';
+import { Route, Link, Switch, NavLink, useHistory } from 'react-router-dom';
+import axios from 'axios';
 import Header from './components/Header';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
-import { Route, Link, Switch } from 'react-router-dom'
-
-
+import SignUp from './components/SignUp';
+import StudentLanding from './components/StudentLanding';
 import './assets/css/main.css';
-import './images/banner.jpg'
+import './images/banner.jpg';
+
+
+const initialFormValues = {
+  username: '',
+  password: '',
+  role: '',
+}
 
 function App() {
+  const history = useHistory();
+  
+  const [currentUser, setCurrentUser] = useState({});
+  
+  const [formValues, setFormValues] = useState(initialFormValues);
+
+  const updateForm = (inputName, inputValue) => {
+    setFormValues({
+      ...formValues,
+      [inputName]: inputValue
+    })
+  };
+
+  const submitForm = () => {
+    // create new user to submit
+    const newUser = {
+      username: formValues.username.trim(),
+      password: formValues.password.trim(),
+      role: formValues.role, 
+    }
+    // null checks
+    if (newUser.email === '' || newUser.password === '' || newUser.role === ''){
+      return;
+    }
+    // TODO: axios call to backend
+    axios.post(
+        `/api/auth/register`, 
+        newUser
+      ).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      })
+    // TODO: set current user upon axios post success
+
+    // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
+    console.log(newUser);
+    setCurrentUser(newUser);
+    history.push('/student');
+    // TODO: rethinking this
+    // TODO: reset values if successful
+    setFormValues(initialFormValues);
+  }
+
   return (
     <div className="page-wrapper">
       <Switch>
@@ -168,8 +218,10 @@ function App() {
                 </p>
               </header>
               <ul class="actions stacked">
-                <li><a href="#" class="button fit primary">Explore</a></li>
-                <li><a href="#" class="button fit">Learn More</a></li>
+                {/* <li><a href="#" class="button fit primary">Explore</a></li> */}
+                <li><NavLink to="#" activeClassName="button fit primary">Explore</NavLink></li>
+                {/* <li><a href="#" class="button fit">Learn More</a></li> */}
+                <li><NavLink to="#" activeClassName="button fit">Learn More</NavLink></li>
               </ul>
             </div>
           </section>
@@ -178,10 +230,23 @@ function App() {
           <Footer />
         </Route>
         <Route path='/signup'>
+          <Header />
+
           {/* Signup */}
+          <SignUp 
+            values={formValues}
+            update={updateForm}
+            submit={submitForm}
+          />
         </Route>
         <Route path='/login'>
           {/* Login */}
+        </Route>
+        <Route path='/student'>
+          {/* Student Landing */}
+          <StudentLanding 
+            currentUser={currentUser}
+          />
         </Route>
       </Switch>
       
