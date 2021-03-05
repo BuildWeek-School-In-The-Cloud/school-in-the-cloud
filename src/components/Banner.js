@@ -6,21 +6,21 @@ export default function Banner() {
   return (
     <>
       <HeroImg id="banner">
-        <div class="inner">
+        <div className="inner">
           <h2>School In The Cloud</h2>
           <p>
             School in the Cloud is a platform that trains senior volunteers to
             teach students in a group or individual setting.
           </p>
-          <ul class="actions special">
+          <ul className="actions special">
             <li>
-              <NavLink to="/" class="button primary">
+              <NavLink to="/" className="button primary">
                 Explore
               </NavLink>
             </li>
           </ul>
         </div>
-        <a href="#one" class="more scrolly">
+        <a href="#one" className="more scrolly">
           Learn More
         </a>
       </HeroImg>

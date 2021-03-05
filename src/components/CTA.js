@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 export default function CTA () {
     return(
-        <HeroImg id="cta" class="wrapper style4">
-            <div class="inner">
+        <HeroImg id="cta" className="wrapper style4">
+            <div className="inner">
               <header>
                 <h2>Arcue ut vel commodo</h2>
                 <p>
@@ -13,11 +13,11 @@ export default function CTA () {
                   amet eleifend fringilla.
                 </p>
               </header>
-              <ul class="actions stacked">
-                {/* <li><a href="#" class="button fit primary">Explore</a></li> */}
-                <li><NavLink to="#" activeClassName="button fit primary">Explore</NavLink></li>
-                {/* <li><a href="#" class="button fit">Learn More</a></li> */}
-                <li><NavLink to="#" activeClassName="button fit">Learn More</NavLink></li>
+              <ul className="actions stacked">
+                {/* <li><a href="#" className="button fit primary">Explore</a></li> */}
+                <li><NavLink to="#" activeclassName="button fit primary">Explore</NavLink></li>
+                {/* <li><a href="#" className="button fit">Learn More</a></li> */}
+                <li><NavLink to="#" activeclassName="button fit">Learn More</NavLink></li>
               </ul>
             </div>
           </HeroImg>

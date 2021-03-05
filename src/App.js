@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Route, Link, Switch, NavLink, useHistory } from "react-router-dom";
+import { Route,  Switch,  useHistory, BrowserRouter as Router } from "react-router-dom";
+import axios from "axios"
 
 import Header from "./components/Header";
 import Banner from "./components/Banner";
@@ -66,6 +67,7 @@ function App() {
   };
 
   return (
+    <Router>
     <div className="page-wrapper">
       <Switch>
         <Route exact path="/">
@@ -78,9 +80,9 @@ function App() {
           */}
           <Banner />
           {/* One */}
-          <section id="one" class="wrapper style1 special">
-            <div class="inner">
-              <header class="major">
+          <section id="one" className="wrapper style1 special">
+            <div className="inner">
+              <header className="major">
                 <h2>
                   Arcu aliquet vel lobortis ata nisl
                   <br />
@@ -94,35 +96,35 @@ function App() {
                   ullamcorper.
                 </p>
               </header>
-              <ul class="icons major">
+              <ul className="icons major">
                 <li>
-                  <span class="icon fa-gem major style1">
-                    <span class="label">Lorem</span>
+                  <span className="icon fa-gem major style1">
+                    <span className="label">Lorem</span>
                   </span>
                 </li>
                 <li>
-                  <span class="icon fa-heart major style2">
-                    <span class="label">Ipsum</span>
+                  <span className="icon fa-heart major style2">
+                    <span className="label">Ipsum</span>
                   </span>
                 </li>
                 <li>
-                  <span class="icon solid fa-code major style3">
-                    <span class="label">Dolor</span>
+                  <span className="icon solid fa-code major style3">
+                    <span className="label">Dolor</span>
                   </span>
                 </li>
               </ul>
             </div>
           </section>
           {/* Two */}
-          <section id="two" class="wrapper alt style2">
-            <section class="spotlight">
-              <div class="image">
+          <section id="two" className="wrapper alt style2">
+            <section className="spotlight">
+              <div className="image">
                 <img
                   src="https://images.unsplash.com/photo-1461532257246-777de18cd58b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
                   alt=""
                 />
               </div>
-              <div class="content">
+              <div className="content">
                 <h2>
                   Magna primis lobortis
                   <br />
@@ -134,14 +136,14 @@ function App() {
                 </p>
               </div>
             </section>
-            <section class="spotlight">
-              <div class="image">
+            <section className="spotlight">
+              <div className="image">
                 <img
                   src="https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
                   alt=""
                 />
               </div>
-              <div class="content">
+              <div className="content">
                 <h2>
                   Tortor dolore feugiat
                   <br />
@@ -153,14 +155,14 @@ function App() {
                 </p>
               </div>
             </section>
-            <section class="spotlight">
-              <div class="image">
+            <section className="spotlight">
+              <div className="image">
                 <img
                   src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080"
                   alt=""
                 />
               </div>
-              <div class="content">
+              <div className="content">
                 <h2>
                   Augue eleifend aliquet
                   <br />
@@ -174,9 +176,9 @@ function App() {
             </section>
           </section>
           {/* Three */}
-          <section id="three" class="wrapper style3 special">
-            <div class="inner">
-              <header class="major">
+          <section id="three" className="wrapper style3 special">
+            <div className="inner">
+              <header className="major">
                 <h2>Accumsan mus tortor nunc aliquet</h2>
                 <p>
                   Aliquam ut ex ut augue consectetur interdum. Donec amet
@@ -186,8 +188,8 @@ function App() {
                   ullamcorper.
                 </p>
               </header>
-              <ul class="features">
-                <li class="icon fa-paper-plane">
+              <ul className="features">
+                <li className="icon fa-paper-plane">
                   <h3>Arcu accumsan</h3>
                   <p>
                     Augue consectetur sed interdum imperdiet et ipsum. Mauris
@@ -195,7 +197,7 @@ function App() {
                     consequat.
                   </p>
                 </li>
-                <li class="icon solid fa-laptop">
+                <li className="icon solid fa-laptop">
                   <h3>Ac Augue Eget</h3>
                   <p>
                     Augue consectetur sed interdum imperdiet et ipsum. Mauris
@@ -203,7 +205,7 @@ function App() {
                     consequat.
                   </p>
                 </li>
-                <li class="icon solid fa-code">
+                <li className="icon solid fa-code">
                   <h3>Mus Scelerisque</h3>
                   <p>
                     Augue consectetur sed interdum imperdiet et ipsum. Mauris
@@ -211,7 +213,7 @@ function App() {
                     consequat.
                   </p>
                 </li>
-                <li class="icon solid fa-headphones-alt">
+                <li className="icon solid fa-headphones-alt">
                   <h3>Mauris Imperdiet</h3>
                   <p>
                     Augue consectetur sed interdum imperdiet et ipsum. Mauris
@@ -219,7 +221,7 @@ function App() {
                     consequat.
                   </p>
                 </li>
-                <li class="icon fa-heart">
+                <li className="icon fa-heart">
                   <h3>Aenean Primis</h3>
                   <p>
                     Augue consectetur sed interdum imperdiet et ipsum. Mauris
@@ -227,7 +229,7 @@ function App() {
                     consequat.
                   </p>
                 </li>
-                <li class="icon fa-flag">
+                <li className="icon fa-flag">
                   <h3>Tortor Ut</h3>
                   <p>
                     Augue consectetur sed interdum imperdiet et ipsum. Mauris
@@ -255,6 +257,7 @@ function App() {
         </Route>
       </Switch>
     </div>
+    </Router>
   );
 }
 
