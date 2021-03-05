@@ -12,34 +12,29 @@ export default function Header() {
           <NavLink to="/">School In The Cloud</NavLink>
         </h1>
         <HomeHeaderNav id="nav">
-          <ul>
+          {/* <ul>
             <li className="special">
               <a href="#menu" className="menuToggle">
                 <span>Menu</span>
               </a>
-              <div id="menu">
+              <div id="menu"> */}
                 <ul>
-                  {/* <li><a href="index.html">Home</a></li> */}
                   <li>
                     <NavLink to="/">Home</NavLink>
                   </li>
-                  {/* TODO: replace with navlinks */}
                   <li>
-                    <a href="generic.html">About Us</a>
-                  </li>
-                  <li>
-                    <a href="elements.html">Meet The Team</a>
+                  <NavLink to="/">Meet the Team</NavLink>
                   </li>
                   <li>
                     <NavLink to="/signup">Sign Up</NavLink>
                   </li>
                   <li>
-                    <a href="#">Log In</a>
+                  <NavLink to="/StudentLanding">Log In</NavLink>
                   </li>
                 </ul>
-              </div>
+              {/* </div>
             </li>
-          </ul>
+          </ul> */}
         </HomeHeaderNav>
       </HomeHeader>
     </>
@@ -62,18 +57,6 @@ const HomeHeader = styled.header`
   z-index: 10000;
 `;
 
-// const HomeHeaderH1 = styled.h1`
-// 	-moz-transition: opacity 0.2s ease;
-// 			-webkit-transition: opacity 0.2s ease;
-// 			-ms-transition: opacity 0.2s ease;
-// 			transition: opacity 0.2s ease;
-// 			height: inherit;
-// 			left: 1.25em;
-// 			line-height: inherit;
-// 			position: absolute;
-// 			top: 0;
-// `
-
 const HomeHeaderNav = styled.nav`
 	height: inherit;
 			line-height: inherit;
@@ -81,11 +64,3 @@ const HomeHeaderNav = styled.nav`
 			right: 0;
 			top: 0;
 `
-
-// const HomeHeaderUl = styled.ul`
-// list-style: none;
-// 				margin: 0;
-// 				padding: 0;
-// 				white-space: nowrap;
-// `
-

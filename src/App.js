@@ -40,7 +40,7 @@ function App() {
     };
     // null checks
     if (
-      newUser.email === "" ||
+      newUser.username === "" ||
       newUser.password === "" ||
       newUser.role === ""
     ) {

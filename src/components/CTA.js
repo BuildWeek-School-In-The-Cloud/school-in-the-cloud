@@ -15,9 +15,9 @@ export default function CTA () {
               </header>
               <ul className="actions stacked">
                 {/* <li><a href="#" className="button fit primary">Explore</a></li> */}
-                <li><NavLink to="#" activeclassName="button fit primary">Explore</NavLink></li>
+                <li><NavLink to="#" activeclassname="button fit primary">Explore</NavLink></li>
                 {/* <li><a href="#" className="button fit">Learn More</a></li> */}
-                <li><NavLink to="#" activeclassName="button fit">Learn More</NavLink></li>
+                <li><NavLink to="#" activeclassname="button fit">Learn More</NavLink></li>
               </ul>
             </div>
           </HeroImg>

@@ -10,12 +10,14 @@ test("Individual parts are rendering", () => {
   // Render
   render(<App />);
   // Act
-  const menu = screen.getByText(/menu/i);
-  const cta = screen.getByText(/ARCUE UT VEL COMMODO/i)
-  const banner = screen.getByText(/SCHOOL IN THE CLOUD IS A PLATFORM THAT TRAINS SENIOR VOLUNTEERS TO TEACH STUDENTS IN A GROUP OR INDIVIDUAL SETTING./i)
-  const spotlight1 = screen.getByText(/MAGNA PRIMIS LOBORTISSED ULLAMCORPER/i)
+  const nav = screen.getByText(/sign up/i);
+  const cta = screen.getByText(/ARCUE UT VEL COMMODO/i);
+  const banner = screen.getByText(
+    /SCHOOL IN THE CLOUD IS A PLATFORM THAT TRAINS SENIOR VOLUNTEERS TO TEACH STUDENTS IN A GROUP OR INDIVIDUAL SETTING./i
+  );
+  const spotlight1 = screen.getByText(/MAGNA PRIMIS LOBORTISSED ULLAMCORPER/i);
   // Assert
-  expect(menu).toBeInTheDocument();
+  expect(nav).toBeInTheDocument();
   expect(banner).toBeInTheDocument();
   expect(spotlight1).toBeInTheDocument();
   expect(cta).toBeInTheDocument();
