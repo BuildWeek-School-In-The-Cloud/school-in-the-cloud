@@ -8,6 +8,7 @@ export default function StudentLanding(props) {
     <div>
       Student landing
       {console.log(currentUser)}
+      <br />show list of appointments
     </div>
   );
 }

@@ -33,7 +33,7 @@ function App() {
   const submitForm = () => {
     // create new user to submit
     const newUser = {
-      username: formValues.email.trim(),
+      username: formValues.username.trim(),
       password: formValues.password.trim(),
       role: formValues.role, 
     }
