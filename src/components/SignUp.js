@@ -20,7 +20,7 @@ export default function SignUp(props) {
         <label>Username
           <input
             name='username'
-            type='email'
+            type='text'
             value={values.username}
             onChange={onChange}
             placeholder='Type username here...'
