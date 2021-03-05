@@ -48,7 +48,7 @@ function App() {
     }
     // TODO: axios call to backend
     axios.post(
-        `/api/auth/register`, 
+        `https://bw-backend-clouds.herokuapp.com/api/auth/register`, 
         newUser
       ).then((res) => {
         console.log(res);
@@ -60,7 +60,6 @@ function App() {
     // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
     console.log(newUser);
     setCurrentUser(newUser);
-    history.push("/student");
     // TODO: rethinking this
     // TODO: reset values if successful
     setFormValues(initialFormValues);
@@ -68,8 +67,10 @@ function App() {
 
   const getVolunteerAvailability = () => {
     // get volunteer information
-    axios.get(`/api/student/volunteers`)
+    axios
+      .get(`https://bw-backend-clouds.herokuapp.com/`)
       .then((res) => {
+
         console.log(res);
       }).catch((err) => {
         console.log(err);
