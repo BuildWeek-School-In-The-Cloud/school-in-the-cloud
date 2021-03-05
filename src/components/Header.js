@@ -7,11 +7,11 @@ import "../assets/css/main.css";
 export default function Header() {
   return (
     <>
-      <header id="header" className="alt">
+      <HomeHeader id="header" className="alt">
         <h1>
           <NavLink to="/">School In The Cloud</NavLink>
         </h1>
-        <nav id="nav">
+        <HomeHeaderNav id="nav">
           <ul>
             <li className="special">
               <a href="#menu" className="menuToggle">
@@ -40,27 +40,27 @@ export default function Header() {
               </div>
             </li>
           </ul>
-        </nav>
-      </header>
+        </HomeHeaderNav>
+      </HomeHeader>
     </>
   );
 }
 
-// const HomeHeader = styled.header`
-//   -moz-transition: background-color 0.2s ease;
-//   -webkit-transition: background-color 0.2s ease;
-//   -ms-transition: background-color 0.2s ease;
-//   transition: background-color 0.2s ease;
-//   background: #2e3842;
-//   background: transparent;
-//   height: 3em;
-//   left: 0;
-//   line-height: 3em;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: 10000;
-// `;
+const HomeHeader = styled.header`
+  -moz-transition: background-color 0.2s ease;
+  -webkit-transition: background-color 0.2s ease;
+  -ms-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+  background: #2e3842;
+  background: transparent;
+  height: 3em;
+  left: 0;
+  line-height: 3em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+`;
 
 // const HomeHeaderH1 = styled.h1`
 // 	-moz-transition: opacity 0.2s ease;
@@ -74,13 +74,13 @@ export default function Header() {
 // 			top: 0;
 // `
 
-// const HomeHeaderNav = styled.nav`
-// 	height: inherit;
-// 			line-height: inherit;
-// 			position: absolute;
-// 			right: 0;
-// 			top: 0;
-// `
+const HomeHeaderNav = styled.nav`
+	height: inherit;
+			line-height: inherit;
+			position: absolute;
+			right: 0;
+			top: 0;
+`
 
 // const HomeHeaderUl = styled.ul`
 // list-style: none;
