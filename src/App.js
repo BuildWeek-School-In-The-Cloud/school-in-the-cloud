@@ -48,7 +48,7 @@ function App() {
     }
     // TODO: axios call to backend
     axios.post(
-        `/api/auth/register`, 
+        `https://bw-backend-clouds.herokuapp.com/api/auth/register`, 
         newUser
       ).then((res) => {
         console.log(res);
