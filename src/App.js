@@ -66,6 +66,16 @@ function App() {
     setFormValues(initialFormValues);
   };
 
+  const getVolunteerAvailability = () => {
+    // get volunteer information
+    axios.get(`/api/student/volunteers`)
+      .then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      })
+  }
+
   return (
     <Router>
     <div className="page-wrapper">
@@ -253,7 +263,9 @@ function App() {
         <Route path="/login">{/* Login */}</Route>
         <Route path="/student">
           {/* Student Landing */}
-          <StudentLanding currentUser={currentUser} />
+          <StudentLanding 
+            currentUser={currentUser}
+            getVolunteerAvailability={getVolunteerAvailability}/>
         </Route>
       </Switch>
     </div>
