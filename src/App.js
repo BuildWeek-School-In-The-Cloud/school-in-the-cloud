@@ -12,10 +12,10 @@ import "./assets/css/main.css";
 import "./images/banner.jpg";
 
 const initialFormValues = {
-  email: "",
-  password: "",
-  role: "",
-};
+  username: '',
+  password: '',
+  role: '',
+}
 
 function App() {
   const history = useHistory();
@@ -34,7 +34,7 @@ function App() {
   const submitForm = () => {
     // create new user to submit
     const newUser = {
-      email: formValues.email.trim(),
+      username: formValues.username.trim(),
       password: formValues.password.trim(),
       role: formValues.role,
     };
