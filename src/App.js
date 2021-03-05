@@ -60,7 +60,7 @@ function App() {
     // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
     console.log(newUser);
     setCurrentUser(newUser);
-    history.push("/student");
+    // history.push("/student");
     // TODO: rethinking this
     // TODO: reset values if successful
     setFormValues(initialFormValues);
