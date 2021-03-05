@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import StudentLanding from "./components/StudentLanding";
 import "./assets/css/main.css";
@@ -75,6 +76,23 @@ function App() {
       }).catch((err) => {
         console.log(err);
       })
+  }
+
+  const login = () => {
+    console.log('login from app.js test');
+    // TODO: login logic
+    const loginUser = {
+      username: formValues.username.trim(),
+      password: formValues.password.trim(),
+    }
+    axios.post(
+      `https://bw-backend-clouds.herokuapp.com/api/auth/login`,
+      loginUser
+    ).then((res) => {
+      console.log(res);
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
   return (
@@ -261,7 +279,14 @@ function App() {
           {/* Signup */}
           <SignUp values={formValues} update={updateForm} submit={submitForm} />
         </Route>
-        <Route path="/login">{/* Login */}</Route>
+        <Route path="/login">
+          {/* Login */}
+          <Login
+            values={formValues}
+            update={updateForm}
+            login={login}
+          />
+        </Route>
         <Route path="/student">
           {/* Student Landing */}
           <StudentLanding 
