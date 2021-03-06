@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import StudentLanding from "./components/StudentLanding";
+import Admin from "./components/Admin"
+import Volunteer from "./components/Volunteer"
 import "./assets/css/main.css";
 import "./images/banner.jpg";
 
@@ -56,14 +58,14 @@ function App() {
       ).then((res) => {
         console.log("res",res);
         setFormValues(newUser)
-        // setCurrentUser(newUser);
       }).catch((err) => {
         console.log(err);
       })
-    // TODO: set current user upon axios post success
-
-    // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
-    console.log("newUser", newUser);
+      // TODO: set current user upon axios post success
+      
+      // DELETE-THIS-WHEN-DONE: dummy call to make sure values are picked up
+      console.log("newUser", newUser);
+      setCurrentUser(newUser);
     // history.push("/student");
     // TODO: rethinking this
     // TODO: reset values if successful
@@ -81,24 +83,7 @@ function App() {
       })
   }
 
-  const login = () => {
-    console.log('login from app.js test');
-    // TODO: login logic
-    const loginUser = {
-      username: formValues.username.trim(),
-      password: formValues.password.trim(),
-    }
-    axiosWithAuth
-    .post(
-      `https://bw-backend-clouds.herokuapp.com/api/auth/login`, loginUser
-    ).then((res) => {
-      localStorage.setItem('token', res.data.token);
-      history.push('/student')
-      console.log("res", res);
-    }).catch((err) => {
-      console.log("Login Function Error", err);
-    });
-  }
+  
 
   return (
     <Router>
@@ -286,17 +271,19 @@ function App() {
         </Route>
         <Route path="/login">
           {/* Login */}
-          <Login
-            values={formValues}
-            update={updateForm}
-            login={login}
-          />
+          <Login/>
         </Route>
         <Route path="/student">
           {/* Student Landing */}
           <StudentLanding 
             currentUser={currentUser}
             getVolunteerAvailability={getVolunteerAvailability}/>
+        </Route>
+        <Route path="/admin" >
+          <Admin />
+        </Route>
+        <Route path="/volunteer" >
+          <Volunteer />
         </Route>
       </Switch>
     </div>

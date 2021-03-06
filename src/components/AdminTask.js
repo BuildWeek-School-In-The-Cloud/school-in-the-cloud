@@ -3,6 +3,7 @@
 //* Imports
 import React from 'react'
 import Task from './Task'
+import { useHistory } from 'react-router-dom';
 
 
 //edit button calls modal with TaskForm
@@ -11,10 +12,17 @@ import Task from './Task'
 
 const AdminTask  = (props) => {
     const {task, edit} = props
+    const history = useHistory()
+
+
+    const matchID = () => {
+        history.push(`/admin/${task.id}`)
+    }
+
     return (
         <div>
             <Task task={task} key={task.id} />
-            <button className='btnEditTask' onClick={edit} data-record={task.id}>Edit</button>
+            <button className='btnEditTask' onClick={matchID} data-record={task.id}>Edit</button>
         </div>
     )
 }
