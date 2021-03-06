@@ -1,5 +1,3 @@
-// basic task component - name, description
-
 import React from 'react'
 
 const Task = (props) => {

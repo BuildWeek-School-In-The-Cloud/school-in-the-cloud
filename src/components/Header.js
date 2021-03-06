@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import "../assets/css/main.css";
@@ -12,12 +12,6 @@ export default function Header() {
           <NavLink to="/">School In The Cloud</NavLink>
         </h1>
         <HomeHeaderNav id="nav">
-          {/* <ul>
-            <li className="special">
-              <a href="#menu" className="menuToggle">
-                <span>Menu</span>
-              </a>
-              <div id="menu"> */}
                 <ul>
                   <li>
                     <NavLink to="/">Home</NavLink>
@@ -29,9 +23,6 @@ export default function Header() {
                   <NavLink to="/login">Log In</NavLink>
                   </li>
                 </ul>
-              {/* </div>
-            </li>
-          </ul> */}
         </HomeHeaderNav>
       </HomeHeader>
     </>
