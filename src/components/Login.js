@@ -1,46 +1,52 @@
-import React, { useEffect } from 'react';
-
+import React from "react";
 
 export default function Login(props) {
-  const {values, update, login} = props;
+  const { values, update, login } = props;
 
-  const onChange = evt => {
-    const {name, value} = evt.target;
+  const onChange = (evt) => {
+    const { name, value } = evt.target;
     update(name, value);
-  }
+  };
 
-//   useEffect(() => {
-//     login();
-//   }, []);
 
   return (
-    <form className='form container' onSubmit={login}>
+    <form className="form container" onSubmit={login}>
       <br></br>
       <h1> Login Test </h1>
-      <div className='form-group inputs'>
-        <label>Username
+      <div className="form-group inputs">
+        <label>
+          Username
           <input
-            name='username'
-            type='text'
+            name="username"
+            type="text"
             value={values.username}
             onChange={onChange}
-            placeholder='Type username here...'
+            placeholder="Type username here..."
           ></input>
         </label>
-        <label>Password
-          <input 
-            name='password'
-            type='password'
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
             value={values.password}
             onChange={onChange}
-            placeholder='Please enter a secure password...'
+            placeholder="Please enter a secure password..."
           />
+          <label>
+            Role
+            <select name="role" value={values.role} onChange={onChange}>
+              <option value="">--- select role ---</option>
+              <option value="admin">Administrator</option>
+              <option value="volunteer">Volunteer</option>
+              <option value="student">Student</option>
+            </select>
+          </label>
         </label>
-        <div className='submit'>
+        <div className="submit">
           <button>submit</button>
         </div>
       </div>
-
     </form>
   );
 }

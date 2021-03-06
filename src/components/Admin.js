@@ -1,10 +1,3 @@
-/*//* Admin Page
-✔ Create volunteer tasks
-//TODO Edit volunteer tasks: Edit button (modal) on existing tasks filled with current data that can be edited then saved
-✔ List view of existing tasks
-✔ Add new task button (modal) -> Form for entering new tasks
-*/
-
 //* Imports
 import React, {useState, useEffect} from 'react';
 import AdminTask from './AdminTask'
